@@ -22,3 +22,7 @@ for rendel in rendelesek:
     if rendel[0] == megadott_nap:
         adott_nap_csomagszam += 1
 print(f"A rendelések száma az adott napon: {adott_nap_csomagszam}")
+
+
+# HÁZI: 7.-ig
+print("4. feladat: ")
