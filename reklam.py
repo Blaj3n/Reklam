@@ -26,3 +26,10 @@ print(f"A rendelések száma az adott napon: {adott_nap_csomagszam}")
 
 # HÁZI: 7.-ig
 print("4. feladat: ")
+
+nem_rendelt_nap = 0
+osszes_nap = range(1, 31)
+for nap in range(1, 31):
+    if rendel[1] == "NR" and rendel[2] == 0:
+        nem_rendelt_nap += 1
+print(f"{nem_rendelt_nap} nap nem volt a reklámban nem érintett városból rendelés")
