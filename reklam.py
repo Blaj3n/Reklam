@@ -16,7 +16,9 @@ print("A rendelések száma:", ossz_rendeles)
 
 
 print("3. feladat: ")
-megadott_nap = int(input("Kérem, adjon meg egy napot: "))
+
+megadott_nap = 3 #int(input("Kérem, adjon meg egy napot: "))
+
 adott_nap_csomagszam = 0
 for rendel in rendelesek:
     if rendel[0] == megadott_nap:
@@ -41,7 +43,7 @@ osszes_nap = []
 for nap in rendelesek:
     if nap[0] not in osszes_nap:
         osszes_nap.append(nap[0])
-print(osszes_nap)
+# print(osszes_nap)
 
 szures = []
 
@@ -49,20 +51,28 @@ for nap in osszes_nap:
     for rendel in rendelesek:
         if rendel[0] == nap and rendel[1] == "NR" and nap not in szures:
             szures.append(nap)
-print(szures)
+# print(szures)
 nincs_rendeles = len(osszes_nap) - len(szures)
 if len(osszes_nap) != len(szures):
     print(f"{nincs_rendeles} nap nem volt a reklámban nem érintett városból rendelés")
 elif nincs_rendeles == 0:    # elif len(osszes_nap) == len(szures):
     print("Minden nap volt rendelés a reklámban nem érintett városból")
 
-# print("5. feladat: ")
-#
-# legnagyobb_darabszam = 0
-# for rendel in rendelesek:
-#     if max(rendel[2]):
-#
-# print(f"A legnagyobb darabszám: {max(rendel[2])}, a rendelés napja: {rendel[0]}")
+print("5. feladat: ")
+
+darabszamok = []
+for rendel in rendelesek:
+    darabszamok.append(rendel[2])
+# print(darabszamok)
+# print(max(darabszamok))
+max_darabszam = max(darabszamok)
+# print(len(darabszamok), len(rendelesek))
+indexe_a_max_darabszam = darabszamok.index(max_darabszam)   # miután a len(darabszamok) == len(rendel.txt) [971], így ha veszem a darabszam lista maximumát [9], akkor simán megvizsgálhatom, hogy az hanyadik indexet foglalja el a darabszam listában.    # indexe_a_max_darabszam == 714
+
+
+print(f"A legnagyobb darabszám: {rendelesek[indexe_a_max_darabszam][2]}, a rendelés napja: {rendelesek[indexe_a_max_darabszam][0]}")
+# print(indexe_a_max_darabszam)
+
 
 # print("6. feladat")
 #
