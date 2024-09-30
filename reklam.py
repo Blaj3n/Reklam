@@ -75,7 +75,17 @@ print(f"A legnagyobb darabszám: {rendelesek[indexe_a_max_darabszam][2]}, a rend
 
 
 # print("6. feladat")
-#
-#
-# def osszes(varos: str, sorszam: int):
-#     return varos, sorszam
+
+def osszes(varos: str, nap: int):
+    szamlalo = 0
+    for rendel in rendelesek:
+        if rendel[0] == nap and rendel[1] == varos:
+            szamlalo += rendel[2]
+    return szamlalo
+
+
+osszes_PL_21 = osszes("PL", 21)
+osszes_TV_21 = osszes("TV", 21)
+osszes_NR_21 = osszes("NR", 21)
+print(f"7. feladat: \nA rendelt termékek darabszáma a 21. napon PL: {osszes_PL_21} TV: {osszes_TV_21}"
+      f" NR: {osszes_NR_21}")
