@@ -83,3 +83,20 @@ print(f"7. feladat: \nA rendelt termékek darabszáma a 21. napon PL: {osszes_PL
       f" NR: {osszes_NR_21}")
 
 # HF: 8. feladat
+
+PL_szamlalo = 0
+TV_szamlalo = 0
+NR_szamlalo = 0
+with open("kampany.txt", "w", encoding="utf-8") as fajl:
+    for rendel in rendelesek:
+        for nap in range(1, 11):
+            if nap > 11 and rendel[1] == "PL":
+                PL_szamlalo += 1
+            elif nap > 11 and rendel[1] == "TV":
+                TV_szamlalo += 1
+            elif nap > 11 and rendel[1] == "NR":
+                NR_szamlalo += 1
+print(PL_szamlalo)
+print(TV_szamlalo)
+print(NR_szamlalo)
+
