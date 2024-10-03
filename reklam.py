@@ -75,6 +75,7 @@ def osszes(varos: str, nap: int):
             szamlalo += rendel[2]
     return szamlalo
 
+print(osszes("PL", 2))
 
 osszes_PL_21 = osszes("PL", 21)
 osszes_TV_21 = osszes("TV", 21)
@@ -83,20 +84,31 @@ print(f"7. feladat: \nA rendelt termékek darabszáma a 21. napon PL: {osszes_PL
       f" NR: {osszes_NR_21}")
 
 # HF: 8. feladat
+print("8. feladat")
+# PL_szamlalo = 0
+# TV_szamlalo = 0
+# NR_szamlalo = 0
+# with open("kampany.txt", "w", encoding="utf-8") as fajl:
+#     for rendel in rendelesek:
+#         for nap in range(1, 11):
+#             if nap < 11 and rendel[1] == "PL":
+#                 PL_szamlalo += 1
+#             elif nap < 11 and rendel[1] == "TV":
+#                 TV_szamlalo += 1
+#             elif nap < 11 and rendel[1] == "NR":
+#                 NR_szamlalo += 1
+# print(PL_szamlalo)
+# print(TV_szamlalo)
+# print(NR_szamlalo)
 
-PL_szamlalo = 0
-TV_szamlalo = 0
-NR_szamlalo = 0
-with open("kampany.txt", "w", encoding="utf-8") as fajl:
-    for rendel in rendelesek:
-        for nap in range(1, 11):
-            if nap > 11 and rendel[1] == "PL":
-                PL_szamlalo += 1
-            elif nap > 11 and rendel[1] == "TV":
-                TV_szamlalo += 1
-            elif nap > 11 and rendel[1] == "NR":
-                NR_szamlalo += 1
-print(PL_szamlalo)
-print(TV_szamlalo)
-print(NR_szamlalo)
+PL_adatok = []
+for i in range(1, 31):
+    PL_adatok.append(osszes("PL", i))
+print(PL_adatok)
+
+print("Napok\t""1..10\t""11..20\t""21..30")
+# Napok 1..10 11..20 21..30
+# PL    98    159    106
+# TV    97    143    100
+# NR    91    86     91
 
