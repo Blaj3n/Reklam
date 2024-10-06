@@ -72,7 +72,8 @@ def osszes(varos: str, nap: int):
     szamlalo = 0
     for rendel in rendelesek:
         if rendel[0] == nap and rendel[1] == varos:
-            szamlalo += 1#rendel[2]
+            szamlalo += 1   # rendel[2] itt írtam át azt, hogy a számlálóhoz ne a rendel[2],
+            # hanem 1 adódjon hozzá a lenti videóból merítve az ötletet, és bevált :)
     return szamlalo
 
 
