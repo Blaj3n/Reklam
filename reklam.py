@@ -72,8 +72,9 @@ def osszes(varos: str, nap: int):
     szamlalo = 0
     for rendel in rendelesek:
         if rendel[0] == nap and rendel[1] == varos:
-            szamlalo += rendel[2]
+            szamlalo += 1#rendel[2]
     return szamlalo
+
 
 print(osszes("PL", 2))
 
@@ -101,14 +102,69 @@ print("8. feladat")
 # print(TV_szamlalo)
 # print(NR_szamlalo)
 
-PL_adatok = []
-for i in range(1, 31):
-    PL_adatok.append(osszes("PL", i))
-print(PL_adatok)
+elso_tiz_PL_adatok = []
+elso_tiz_TV_adatok = []
+elso_tiz_NR_adatok = []
+
+masodik_tiz_PL_adatok = []
+masodik_tiz_TV_adatok = []
+masodik_tiz_NR_adatok = []
+
+harmadik_tiz_PL_adatok = []
+harmadik_tiz_TV_adatok = []
+harmadik_tiz_NR_adatok = []
+
+for nap in range(1, 11):
+    elso_tiz_PL_adatok.append(osszes("PL", nap))
+    elso_tiz_TV_adatok.append(osszes("TV", nap))
+    elso_tiz_NR_adatok.append(osszes("NR", nap))
+
+for nap in range(11, 21):
+    masodik_tiz_PL_adatok.append(osszes("PL", nap))
+    masodik_tiz_TV_adatok.append(osszes("TV", nap))
+    masodik_tiz_NR_adatok.append(osszes("NR", nap))
+
+for nap in range(21, 31):
+    harmadik_tiz_PL_adatok.append(osszes("PL", nap))
+    harmadik_tiz_TV_adatok.append(osszes("TV", nap))
+    harmadik_tiz_NR_adatok.append(osszes("NR", nap))
+
+# print(elso_tiz_PL_adatok)
+# print(elso_tiz_TV_adatok)
+# print(elso_tiz_NR_adatok)
+
+elso_tiz_PL_total = sum(elso_tiz_PL_adatok)
+elso_tiz_TV_total = sum(elso_tiz_TV_adatok)
+elso_tiz_NR_total = sum(elso_tiz_NR_adatok)
+
+# print(masodik_tiz_PL_adatok)
+# print(masodik_tiz_TV_adatok)
+# print(masodik_tiz_NR_adatok)
+
+masodik_tiz_PL_total = sum(masodik_tiz_PL_adatok)
+masodik_tiz_TV_total = sum(masodik_tiz_TV_adatok)
+masodik_tiz_NR_total = sum(masodik_tiz_NR_adatok)
+
+# print(harmadik_tiz_PL_adatok)
+# print(harmadik_tiz_TV_adatok)
+# print(harmadik_tiz_NR_adatok)
+
+harmadik_tiz_PL_total = sum(harmadik_tiz_PL_adatok)
+harmadik_tiz_TV_total = sum(harmadik_tiz_TV_adatok)
+harmadik_tiz_NR_total = sum(harmadik_tiz_NR_adatok)
+
+
+# print(f"Összes PL: {elso_tiz_PL_total}, Összes TV: {elso_tiz_TV_total}, Összes NR: {elso_tiz_NR_total}")
+
 
 print("Napok\t""1..10\t""11..20\t""21..30")
+print("PL\t"f"{elso_tiz_PL_total}\t"f"{masodik_tiz_PL_total}\t"f"{harmadik_tiz_PL_total}")
+print("TV\t"f"{elso_tiz_TV_total}\t"f"{masodik_tiz_TV_total}\t"f"{harmadik_tiz_TV_total}")
+print("NR\t"f"{elso_tiz_NR_total}\t"f"{masodik_tiz_NR_total}\t"f"{harmadik_tiz_NR_total}")
 # Napok 1..10 11..20 21..30
 # PL    98    159    106
 # TV    97    143    100
 # NR    91    86     91
 
+
+# https://www.youtube.com/watch?v=1WKUgOlKhz0 39:12     MEGOLDÁS
