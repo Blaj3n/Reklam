@@ -67,6 +67,13 @@ print(f"A legnagyobb darabszám: {rendelesek[indexe_a_max_darabszam][2]}, a rend
 
 
 # print("6. feladat")
+def osszes_2(varos_2: str, nap_2: int):
+    szamlalo = 0
+    for rendel in rendelesek:
+        if rendel[0] == nap_2 and rendel[1] == varos_2:
+            szamlalo += rendel[2]
+    return szamlalo
+
 
 def osszes(varos: str, nap: int):
     szamlalo = 0
@@ -79,29 +86,13 @@ def osszes(varos: str, nap: int):
 
 print(osszes("PL", 2))
 
-osszes_PL_21 = osszes("PL", 21)
-osszes_TV_21 = osszes("TV", 21)
-osszes_NR_21 = osszes("NR", 21)
+osszes_PL_21 = osszes_2("PL", 21)
+osszes_TV_21 = osszes_2("TV", 21)
+osszes_NR_21 = osszes_2("NR", 21)
 print(f"7. feladat: \nA rendelt termékek darabszáma a 21. napon PL: {osszes_PL_21} TV: {osszes_TV_21}"
       f" NR: {osszes_NR_21}")
 
-# HF: 8. feladat
 print("8. feladat")
-# PL_szamlalo = 0
-# TV_szamlalo = 0
-# NR_szamlalo = 0
-# with open("kampany.txt", "w", encoding="utf-8") as fajl:
-#     for rendel in rendelesek:
-#         for nap in range(1, 11):
-#             if nap < 11 and rendel[1] == "PL":
-#                 PL_szamlalo += 1
-#             elif nap < 11 and rendel[1] == "TV":
-#                 TV_szamlalo += 1
-#             elif nap < 11 and rendel[1] == "NR":
-#                 NR_szamlalo += 1
-# print(PL_szamlalo)
-# print(TV_szamlalo)
-# print(NR_szamlalo)
 
 elso_tiz_PL_adatok = []
 elso_tiz_TV_adatok = []
@@ -154,18 +145,9 @@ harmadik_tiz_PL_total = sum(harmadik_tiz_PL_adatok)
 harmadik_tiz_TV_total = sum(harmadik_tiz_TV_adatok)
 harmadik_tiz_NR_total = sum(harmadik_tiz_NR_adatok)
 
-
 # print(f"Összes PL: {elso_tiz_PL_total}, Összes TV: {elso_tiz_TV_total}, Összes NR: {elso_tiz_NR_total}")
 
-
-print("Napok\t""1..10\t""11..20\t""21..30")
-print("PL\t"f"{elso_tiz_PL_total}\t"f"{masodik_tiz_PL_total}\t"f"{harmadik_tiz_PL_total}")
-print("TV\t"f"{elso_tiz_TV_total}\t"f"{masodik_tiz_TV_total}\t"f"{harmadik_tiz_TV_total}")
-print("NR\t"f"{elso_tiz_NR_total}\t"f"{masodik_tiz_NR_total}\t"f"{harmadik_tiz_NR_total}")
-# Napok 1..10 11..20 21..30
-# PL    98    159    106
-# TV    97    143    100
-# NR    91    86     91
-
-
-# https://www.youtube.com/watch?v=1WKUgOlKhz0 39:12     MEGOLDÁS
+print("Napok\t1..10\t11..20\t21..30")
+print(f"PL      {elso_tiz_PL_total}\t\t{masodik_tiz_PL_total}\t\t{harmadik_tiz_PL_total}")
+print(f"TV      {elso_tiz_TV_total}\t\t{masodik_tiz_TV_total}\t\t{harmadik_tiz_TV_total}")
+print(f"NR      {elso_tiz_NR_total}\t\t{masodik_tiz_NR_total}\t\t{harmadik_tiz_NR_total}")
